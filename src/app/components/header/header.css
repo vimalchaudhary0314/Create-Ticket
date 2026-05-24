@@ -1,0 +1,48 @@
+/* Navbar container */
+.navbar {
+  background-color:blueviolet;
+  padding: 0;
+}
+
+/* Remove default list style */
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* List items */
+li {
+  margin: 0 10px;
+}
+
+/* Navigation links */
+a {
+  display: block;
+
+  padding: 14px 22px;
+
+  text-decoration: none;
+  color: white;
+
+  font-size: 16px;
+  font-weight: 500;
+
+  transition: 0.3s ease;
+}
+
+/* Hover effect */
+a:hover {
+  background-color: #444;
+  border-radius: 6px;
+}
+
+/* Active route */
+.active {
+  background-color: #ff5722;
+  border-radius: 6px;
+}

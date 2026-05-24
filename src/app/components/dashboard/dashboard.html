@@ -1,0 +1,59 @@
+<h1 class="main-title">Ticket Dashboard</h1>
+
+<div class="stats">
+
+  <h3 (click)="showAll()">
+    Total Tickets: {{ totalTickets }}
+  </h3>
+
+  <h3 (click)="filterByStatus('Open')">
+    Open Tickets: {{ openTickets }}
+  </h3>
+
+  <h3 (click)="filterByStatus('Closed')">
+    Closed Tickets: {{ closedTickets }}
+  </h3>
+
+   <h3 (click)="filterByStatus('In Progress')">
+    Pending Tickets: {{pendingTickets}}
+  </h3>
+
+</div>
+
+<h2 class="table-title">{{ selectedLabel }}</h2>
+
+<table>
+
+  <!-- FIELD NAMES (HEADER ROW) -->
+  <thead>
+
+    <tr>
+      <th>ID</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Priority</th>
+      <th>Status</th>
+      <th>EmployeeId</th>
+      <th>Date</th>
+    </tr>
+
+  </thead>
+
+  <!-- DATA -->
+  <tbody>
+
+    <tr *ngFor="let ticket of filteredTickets">
+
+      <td>{{ ticket.id }}</td>
+      <td>{{ ticket.title }}</td>
+      <td>{{ ticket.description }}</td>
+      <td>{{ ticket.priority }}</td>
+      <td>{{ ticket.status }}</td>
+      <td>{{ ticket.assignedEmployee }}</td>
+      <td>{{ ticket.createdDate }}</td>
+
+    </tr>
+
+  </tbody>
+
+</table>

@@ -1,0 +1,80 @@
+/* PAGE TITLE */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* STATS CARDS */
+.stats {
+  display: flex;
+  justify-content: space-around;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+/* EACH CARD */
+.stats h3 {
+  flex: 1;
+  text-align: center;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* HOVER EFFECT */
+.stats h3:hover {
+  transform: translateY(-5px);
+  background: #f0f8ff;
+}
+
+/* CLICK EFFECT */
+.stats h3:active {
+  transform: scale(0.98);
+}
+
+/* SECTION TITLE */
+h2 {
+  text-align: center;
+  margin-top: 20px;
+  color: #444;
+}
+
+/* TABLE STYLE */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* HEADER */
+th {
+  background: #007bff;
+  color: white;
+  padding: 12px;
+}
+
+/* CELLS */
+td {
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #370be5;
+}
+
+/* ROW HOVER */
+tr:hover {
+  background: #08aadb;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .stats {
+    flex-direction: column;
+  }
+}

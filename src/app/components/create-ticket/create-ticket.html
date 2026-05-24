@@ -1,0 +1,81 @@
+<div class="ticket-container">
+
+  <h2>Create Ticket</h2>
+
+  <form [formGroup]="ticketForm" (ngSubmit)="createTicket()">
+
+    <!-- Ticket ID -->
+    <label>Ticket ID</label>
+
+    <input type="text" formControlName="id" readonly>
+
+    <!-- Title -->
+    <label>Title</label>
+
+    <input type="text" placeholder="Enter Title" formControlName="title">
+
+    <!-- Description -->
+    <label>Description</label>
+
+    <textarea rows="4" placeholder="Enter Description" formControlName="description"></textarea>
+
+    <!-- Priority -->
+    <label>Priority</label>
+
+    <select formControlName="priority">
+
+      <option value="">
+        Select Priority
+      </option>
+
+      <option value="High">
+        High
+      </option>
+
+      <option value="Medium">
+        Medium
+      </option>
+
+      <option value="Low">
+        Low
+      </option>
+
+    </select>
+
+    <!-- Status -->
+    <label>Status</label>
+
+    <select formControlName="status">
+
+      <option value="Open">
+        Open
+      </option>
+
+      <option value="In Progress">
+        In Progress
+      </option>
+
+      <option value="Closed">
+        Closed
+      </option>
+
+    </select>
+
+    <!-- Assigned Employee -->
+    <label>Assigned Employee</label>
+
+    <input type="text" placeholder="Employee Name" formControlName="assignedEmployee">
+
+    <!-- Created Date -->
+    <label>Created Date</label>
+
+    <input type="text" formControlName="createdDate" readonly>
+
+    <!-- Submit Button -->
+    <button type="submit">
+      Create Ticket
+    </button>
+
+  </form>
+
+</div>

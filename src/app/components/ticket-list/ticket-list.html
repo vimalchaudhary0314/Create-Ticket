@@ -1,0 +1,141 @@
+<div class="ticket-list-container">
+
+  <h2>Ticket List</h2>
+
+  <!-- SEARCH -->
+  <input
+    type="text"
+    placeholder="Search Ticket Title"
+    [(ngModel)]="searchText"
+    (input)="filterTickets()"
+  >
+
+  <!-- FILTER PRIORITY -->
+  <select
+    [(ngModel)]="selectedPriority"
+    (change)="filterTickets()"
+  >
+
+    <option value="">
+      All Priority
+    </option>
+
+    <option value="High">
+      High
+    </option>
+
+    <option value="Medium">
+      Medium
+    </option>
+
+    <option value="Low">
+      Low
+    </option>
+
+  </select>
+
+  <!-- FILTER STATUS -->
+  <select
+    [(ngModel)]="selectedStatus"
+    (change)="filterTickets()"
+  >
+
+    <option value="">
+      All Status
+    </option>
+
+    <option value="Open">
+      Open
+    </option>
+
+    <option value="In Progress">
+      In Progress
+    </option>
+
+    <option value="Closed">
+      Closed
+    </option>
+
+  </select>
+
+  <table>
+
+    <thead>
+
+      <tr>
+
+        <th>ID</th>
+
+        <th>Title</th>
+
+        <th>Description</th>
+
+        <th>Priority</th>
+
+        <th>Status</th>
+
+        <th>Employee</th>
+
+        <th>Date</th>
+
+        <th>Actions</th>
+
+      </tr>
+
+    </thead>
+
+    <tbody>
+
+      <tr *ngFor="let ticket of filteredTickets">
+
+        <td>{{ ticket.id }}</td>
+
+        <td>{{ ticket.title }}</td>
+
+        <td>{{ ticket.description }}</td>
+
+        <td>
+
+          <span
+            [ngClass]="{
+              'high': ticket.priority === 'High',
+              'medium': ticket.priority === 'Medium',
+              'low': ticket.priority === 'Low'
+            }"
+          >
+            {{ ticket.priority }}
+          </span>
+
+        </td>
+
+        <td>{{ ticket.status }}</td>
+
+        <td>{{ ticket.assignedEmployee }}</td>
+
+        <td>{{ ticket.createdDate }}</td>
+
+        <td>
+
+          <button
+            class="edit-btn"
+            [routerLink]="['/create-ticket', ticket.id]"
+          >
+            Edit
+          </button>
+
+          <button
+            class="delete-btn"
+            (click)="deleteTicket(ticket.id)"
+          >
+            Delete
+          </button>
+
+        </td>
+
+      </tr>
+
+    </tbody>
+
+  </table>
+
+</div>

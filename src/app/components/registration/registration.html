@@ -1,0 +1,39 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+  <input type="text"
+         placeholder="Username"
+         formControlName="username">
+
+  <br><br>
+
+  <input type="text"
+         placeholder="Phone Number"
+         formControlName="phoneNo">
+
+  <br><br>
+
+  <input type="email"
+         placeholder="Email"
+         formControlName="email">
+
+  <br><br>
+
+  <input type="password"
+         placeholder="Password"
+         formControlName="password">
+
+  <br><br>
+
+  <input type="password"
+         placeholder="Confirm Password"
+         formControlName="confirmPassword">
+
+  <br><br>
+
+  <button type="submit">submit</button>
+  <br><br>
+ <p>
+  Already have an account?
+  <a routerLink="/login">Login</a>
+</p>
+</form>

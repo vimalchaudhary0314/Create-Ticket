@@ -1,0 +1,49 @@
+<div class="form-container">
+
+  <form [formGroup]="form"
+        (ngSubmit)="onSubmit()">
+
+    <h2>Login Form</h2>
+
+    <!-- Email -->
+
+    <input type="email"
+           placeholder="Enter Email"
+           formControlName="email">
+
+    <div class="error"
+         *ngIf="form.controls.email.invalid &&
+                form.controls.email.touched">
+
+      Valid Email Required
+
+    </div>
+
+    <!-- Password -->
+
+    <input type="password"
+           placeholder="Enter Password"
+           formControlName="password">
+
+    <div class="error"
+         *ngIf="form.controls.password.invalid &&
+                form.controls.password.touched">
+
+      Password Required
+
+    </div>
+
+    <!-- Button -->
+
+    <button type="submit">
+      Login
+    </button>
+
+    <p>
+      User does not have an account?
+      <a routerLink="/">Registration</a>
+    </p>
+
+  </form>
+
+</div>
